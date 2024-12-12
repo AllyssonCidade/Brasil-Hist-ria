@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      letterSpacing: {
+        "25p": "0.25em",
+      },
     },
   },
   plugins: [],
