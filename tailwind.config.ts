@@ -15,6 +15,9 @@ export default {
       letterSpacing: {
         "25p": "0.25em",
       },
+      screens: {
+        sm400: { max: "400px" },
+      },
     },
   },
   plugins: [],
