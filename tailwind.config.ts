@@ -18,6 +18,9 @@ export default {
       screens: {
         sm400: { max: "400px" },
       },
+      height: {
+        lg440: "440px",
+      },
     },
   },
   plugins: [],
