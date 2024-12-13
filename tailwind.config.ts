@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      letterSpacing: {
+        "25p": "0.25em",
+      },
+      screens: {
+        sm400: { max: "400px" },
+      },
     },
   },
   plugins: [],
