@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 function Videos() {
   return (
-    <div className="flex flex-col gap-2 overflow-scroll py-12 px-2 ">
+    <div className="flex flex-col gap-2  py-12 px-2 ">
       <div className="w-full h-1 bg-black" />
       <h3 className="text-lg md:text-2xl lg:text-3xl text-center tracking-25p py-2 md:py-6 lg:py-8">
         Videos e Aulas Recentes

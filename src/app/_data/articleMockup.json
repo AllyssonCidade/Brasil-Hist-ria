@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "capa": "/images/capa1.jpeg",
+    "data": "14 de dezembro de 2024",
+    "autor": "João Silva",
+    "titulo": "Como melhorar a produtividade no trabalho",
+    "texto": "Descubra técnicas simples e práticas para aumentar sua eficiência no dia a dia."
+  },
+  {
+    "id": 2,
+    "capa": "/images/capa2.jpeg",
+    "data": "12 desembro de 2024",
+    "autor": "Maria Oliveira",
+    "titulo": "Os benefícios da meditação diária",
+    "texto": "Entenda como a meditação pode ajudar a reduzir o estresse e melhorar a saúde mental."
+  },
+  {
+    "id": 3,
+    "capa": "/images/capa3.jpeg",
+    "data": "10 desembro de 2024",
+    "autor": "Carlos Pereira",
+    "titulo": "Dicas para uma alimentação mais saudável",
+    "texto": "Aprenda a criar uma dieta equilibrada com alimentos acessíveis e nutritivos."
+  }
+]
