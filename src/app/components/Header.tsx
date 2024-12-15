@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       {/* Side Bar vinda do Menu Hambrguer */}
       {isMenuOpen ? (
-        <div className="py-12 px-12 absolute h-full -mt-16 w-1/2 right-0 bg-white flex flex-col items-center">
+        <div className="py-12 px-12 absolute h-full z-10 -mt-16 w-1/2 right-0 bg-white flex flex-col items-center">
           {/* Botão para fechar o menu */}
           <button
             onClick={() => onPressMenu()}

@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import Benefits from "../components/Benefits";
 import Header from "../components/Header";
+import Videos from "../components/Videos";
 
 export default function HomeScreen() {
   return (
@@ -8,6 +9,7 @@ export default function HomeScreen() {
       <Header />
       <Banner />
       <Benefits />
+      <Videos />
     </>
   );
 }
