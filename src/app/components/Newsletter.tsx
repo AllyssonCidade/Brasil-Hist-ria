@@ -2,7 +2,7 @@ import React from "react";
 
 function Newsletter() {
   return (
-    <>
+    <section>
       <div className="w-full h-2 bg-black " />
       <div className="flex flex-col mb-5 pt-2 gap-4 w-11/12 m-auto md:px-28 lg:px-56 xl:px-96">
         <h4 className="text-2xl tracking-25p text-center">
@@ -25,7 +25,7 @@ function Newsletter() {
           </button>
         </form>
       </div>
-    </>
+    </section>
   );
 }
 
