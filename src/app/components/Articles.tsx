@@ -14,7 +14,7 @@ const articles: ArticleType[] = ArticlesArray;
 
 function Articles() {
   return (
-    <div className="flex flex-col gap-10 px-4 mt-4 pb-4">
+    <section className="flex flex-col gap-10 px-4 mt-4 pb-4">
       <div className="w-full h-px bg-black" />
       <h3 className="text-center text-3xl tracking-25p -mt-4">Artigos</h3>
       <div className="grid gap-10 justify-center grid-cols-1 md:grid-cols-2 md:px-16 xl:px-48 ">
@@ -44,7 +44,7 @@ function Articles() {
       <button className="lg:text-2xl mt-4 self-center font-medium bg-neutral-300 p-1 px-4 shadow-lg">
         Ver todos
       </button>
-    </div>
+    </section>
   );
 }
 

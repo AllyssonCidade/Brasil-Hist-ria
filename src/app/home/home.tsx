@@ -4,6 +4,7 @@ import Benefits from "../components/Benefits";
 import Header from "../components/Header";
 import Newsletter from "../components/Newsletter";
 import Videos from "../components/Videos";
+import Footer from "../components/Footer";
 
 export default function HomeScreen() {
   return (
@@ -14,6 +15,7 @@ export default function HomeScreen() {
       <Articles />
       <Videos />
       <Newsletter />
+      <Footer />
     </>
   );
 }
