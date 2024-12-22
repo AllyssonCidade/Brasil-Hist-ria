@@ -1,18 +1,39 @@
-import React from "react";
-import ArticlesArray from "../_data/articleMockup.json";
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+"use client";
 
-export interface ArticleType {
-  id: number;
-  capa: string;
-  data: string;
-  autor: string;
-  titulo: string;
-  texto: string;
-}
-const articles: ArticleType[] = ArticlesArray;
+import React from "react";
+import { useArticleContext } from "../context/articleContext";
+const formatDate = (dateString: string) => {
+  const months = [
+    "janeiro",
+    "fevereiro",
+    "março",
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "dezembro",
+  ];
+
+  // Cria uma data a partir da string no formato ISO 8601
+  const date = new Date(dateString);
+
+  // Extrai o dia, mês e ano
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  // Retorna a data formatada
+  return `${day < 10 ? "0" + day : day} de ${month} de ${year}`;
+};
 
 function Articles() {
+  const { articles } = useArticleContext();
+  const HOST_IMG = process.env.NEXT_PUBLIC_HOST_IMG_API;
   return (
     <section className="flex flex-col gap-10 px-4 mt-4 pb-4">
       <div className="w-full h-px bg-black" />
@@ -21,23 +42,16 @@ function Articles() {
         {articles.map((article) => (
           <div key={article.id} className="w-full justify-between">
             <div className="w-12/12 mx-auto h-64 relative">
-              <Image src={article.capa} alt={article.titulo} fill />
+              <img
+                src={`${HOST_IMG}${article?.cover?.url.replace(/\s.*$/, "")}`}
+                alt={article.title}
+                className="object-cover w-full h-full"
+              />
             </div>
             <p className="text-xs mt-2">
-              {article.data} | Por: {article.autor}
+              {formatDate(article.publishedAt)} | Por: {article.autor}
             </p>
-            <h3 className="text-xl font-medium">{article.titulo}</h3>
-          </div>
-        ))}
-        {articles.map((article) => (
-          <div key={article.id} className="w-full justify-between">
-            <div className="w-12/12 mx-auto h-64 relative">
-              <Image src={article.capa} alt={article.titulo} fill />
-            </div>
-            <p className="text-xs mt-2">
-              {article.data} | Por: {article.autor}
-            </p>
-            <h3 className="text-xl font-medium">{article.titulo}</h3>
+            <h3 className="text-xl font-medium">{article.title}</h3>
           </div>
         ))}
       </div>
