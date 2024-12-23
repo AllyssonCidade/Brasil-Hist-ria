@@ -11,6 +11,12 @@ export interface Article {
   comments?: { id: string; content: string; autor: string }[];
 }
 
+export type BannerProps = {
+  banner: {
+    url: string;
+  }[];
+};
+
 export const fetchArticles = async (): Promise<Article[]> => {
   const response = await fetch(`${HOST}articles`);
   if (!response.ok) {
@@ -21,13 +27,14 @@ export const fetchArticles = async (): Promise<Article[]> => {
   return data.data;
 };
 
-export const fetchBanner = async (): Promise<string> => {
-  const response = await fetch(`${HOST}banners`);
+export const fetchBanner = async (): Promise<BannerProps> => {
+  const response = await fetch(`${HOST}banners?populate=*`);
+
   if (!response.ok) {
     throw new Error("Erro ao buscar banner");
   }
   const data = await response.json();
-  return data.data;
+  return data.data[0];
 };
 
 export const fetchVideos = async (): Promise<string[]> => {
