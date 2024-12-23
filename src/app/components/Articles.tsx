@@ -33,7 +33,6 @@ const formatDate = (dateString: string) => {
 
 function Articles() {
   const { articles } = useArticleContext();
-  const HOST_IMG = process.env.NEXT_PUBLIC_HOST_IMG_API;
   return (
     <section className="flex flex-col gap-10 px-4 mt-4 pb-4">
       <div className="w-full h-px bg-black" />
@@ -43,7 +42,7 @@ function Articles() {
           <div key={article.id} className="w-full justify-between">
             <div className="w-12/12 mx-auto h-64 relative">
               <img
-                src={`${HOST_IMG}${article?.cover?.url.replace(/\s.*$/, "")}`}
+                src={`${article?.cover?.url}`}
                 alt={article.title}
                 className="object-cover w-full h-full"
               />
