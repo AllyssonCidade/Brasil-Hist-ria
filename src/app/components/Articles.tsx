@@ -30,10 +30,10 @@ const formatDate = (dateString: string) => {
   // Retorna a data formatada
   return `${day < 10 ? "0" + day : day} de ${month} de ${year}`;
 };
+const HOST = process.env.NEXT_PUBLIC_HOST_API;
 // USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
 //não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host )
 //em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
-// const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 
 function Articles() {
   const { articles } = useArticleContext();
@@ -46,7 +46,7 @@ function Articles() {
           <div key={article.id} className="w-full justify-between">
             <div className="w-12/12 mx-auto h-64 relative">
               <img
-                src={`${article?.cover?.url}`}
+                src={`${HOST}${article?.cover?.url}`}
                 alt={article.title}
                 className="object-cover w-full h-full"
               />
