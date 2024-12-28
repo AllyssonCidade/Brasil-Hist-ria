@@ -31,9 +31,9 @@ const formatDate = (dateString: string) => {
   return `${day < 10 ? "0" + day : day} de ${month} de ${year}`;
 };
 // USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
-//não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host )
+//não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
 //em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
-// const HOST = process.env.NEXT_PUBLIC_HOST_API;
+// const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 
 function Articles() {
   const { articles } = useArticleContext();

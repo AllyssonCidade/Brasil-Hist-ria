@@ -11,6 +11,12 @@ export interface Article {
   comments?: { id: string; content: string; autor: string }[];
 }
 
+export interface VideoProps {
+  id: number;
+  url: string;
+  video: [{ url: string }];
+}
+
 export type BannerProps = {
   banner: {
     url: string;
@@ -37,7 +43,7 @@ export const fetchBanner = async (): Promise<BannerProps> => {
   return data.data[0];
 };
 
-export const fetchVideos = async (): Promise<string[]> => {
+export const fetchVideos = async (): Promise<VideoProps[]> => {
   const response = await fetch(`${HOST}videos`);
   if (!response.ok) {
     throw new Error("Erro ao buscar videos");

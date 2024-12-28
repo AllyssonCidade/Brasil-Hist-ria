@@ -23,41 +23,41 @@ const Header = () => {
       </div>
       {/* Side Bar vinda do Menu Hambrguer */}
       {isMenuOpen ? (
-        <div className="py-12 px-12 absolute h-full z-10 -mt-16 w-1/2 right-0 bg-white flex flex-col items-center">
+        <div className="py-12 px-12 absolute h-full z-10 -mt-16 w-1/2 right-0 dark:bg-black bg-white flex flex-col items-center">
           {/* Botão para fechar o menu */}
           <button
             onClick={() => onPressMenu()}
             className="absolute top-20 right-12"
           >
             {/* ICONE DO HAMBURGUER */}
-            <FaTimes className="w-6 h-6 text-gray-500" />
+            <FaTimes className="w-6 h-6 text-gray-500 dark:text-white" />
           </button>
 
           {/* Navegação */}
           <nav className="flex flex-col justify-evenly h-full w-full">
             <ul className="flex flex-col items-start gap-6">
               <Link href="/">
-                <li className="text-base font-bold hover:text-gray-500">
+                <li className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400">
                   ARTIGOS
                 </li>
               </Link>
               <Link href="/">
-                <li className="text-base font-bold hover:text-gray-500">
+                <li className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400">
                   SOBRE
                 </li>
               </Link>
               <Link href="/">
-                <li className="text-base font-bold hover:text-gray-500">
+                <li className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400">
                   LINKS
                 </li>
               </Link>
               <Link href="/">
-                <li className="text-base font-bold hover:text-gray-500">
+                <li className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400">
                   VIDEOS
                 </li>
               </Link>
               <Link href="/">
-                <li className="text-base font-bold hover:text-gray-500">
+                <li className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400">
                   EVENTOS
                 </li>
               </Link>
@@ -70,21 +70,27 @@ const Header = () => {
         <ul className="w-full h-full items-center text-center">
           <li className=" flex w-full h-full flex-row justify-evenly lg:justify-between text-center items-center">
             <Link href="/">
-              <p className="text-base font-bold hover:text-gray-500 ">
+              <p className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400 ">
                 ARTIGOS
               </p>
             </Link>
             <Link href="/">
-              <p className="text-base font-bold hover:text-gray-500 ">SOBRE</p>
+              <p className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400 ">
+                SOBRE
+              </p>
             </Link>
             <Link href="/">
-              <p className="text-base font-bold hover:text-gray-500 ">LINKS</p>
+              <p className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400 ">
+                LINKS
+              </p>
             </Link>
             <Link href="/">
-              <p className="text-base font-bold hover:text-gray-500 ">VIDEOS</p>
+              <p className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400 ">
+                VIDEOS
+              </p>
             </Link>
             <Link href="/">
-              <p className="text-base font-bold hover:text-gray-500 ">
+              <p className="text-base font-bold hover:text-gray-500 dark:text-white hover:dark:text-gray-400 ">
                 EVENTOS
               </p>
             </Link>
