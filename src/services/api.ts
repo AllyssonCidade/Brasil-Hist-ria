@@ -23,9 +23,13 @@ export type BannerProps = {
     url: string;
   }[];
 };
-
-export const fetchArticles = async (): Promise<ArticleProps[]> => {
-  const response = await fetch(`${HOST}articles`);
+export const fetchArticles = async (
+  start: number,
+  limit: number
+): Promise<ArticleProps[]> => {
+  const response = await fetch(
+    `${HOST}articles?pagination[start]=${start}&pagination[limit]=${limit}`
+  );
   if (!response.ok) {
     throw new Error("Erro ao buscar artigos");
   }

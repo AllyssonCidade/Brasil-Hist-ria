@@ -22,9 +22,6 @@ interface ArticleProps {
   comments?: { id: string; content: string; autor: string }[];
 }
 
-// USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
-//não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
-//em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
 const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 export default function Article() {
   const { articles } = useArticleContext();

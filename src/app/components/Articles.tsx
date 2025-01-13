@@ -1,16 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useArticleContext } from "../context/articleContext";
 
 import CardArticle from "./CardArticle";
 
-// USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
-//não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
-//em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
 const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 
 function Articles() {
-  const { articles } = useArticleContext();
+  const { articles, loadMoreArticles, loading } = useArticleContext();
+  const [limitAtual, setLimitAtual] = useState(6);
+
+  async function verMais() {
+    await loadMoreArticles(0, limitAtual + 6);
+    setLimitAtual(limitAtual + 6);
+  }
+
   return (
     <section className="flex flex-col gap-10 px-4 mt-4 pb-4">
       <div className="w-full h-px bg-black" />
@@ -25,27 +29,13 @@ function Articles() {
             autor={article.autor}
             publishedAt={article.publishedAt}
           />
-          // <Link
-          //   key={article.id}
-          //   href={`/articles/${article.id}`}
-          //   className="w-full justify-between pressed:bg-slate-900 pressed:text-white"
-          // >
-          //   <div className="w-12/12 mx-auto h-64 relative">
-          //     <img
-          //       src={`${HOST}${article?.cover?.url}`}
-          //       alt={article.title}
-          //       className="object-cover w-full h-full"
-          //     />
-          //   </div>
-          //   <p className="text-xs mt-2">
-          //     {formatDate(article.publishedAt)} | Por: {article.autor}
-          //   </p>
-          //   <h3 className="text-xl font-medium">{article.title}</h3>
-          // </Link>
         ))}
       </div>
-      <button className="lg:text-2xl mt-4 self-center font-medium bg-neutral-300 p-1 px-4 shadow-lg">
-        Ver todos
+      <button
+        onClick={verMais}
+        className="lg:text-2xl mt-4 self-center font-medium bg-neutral-300 p-1 px-4 shadow-lg"
+      >
+        {loading ? <p>Carregando...</p> : <p>Ver mais</p>}
       </button>
     </section>
   );

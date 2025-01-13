@@ -3,9 +3,6 @@
 import { BannerProps, fetchBanner } from "@/services/api";
 import React, { useEffect } from "react";
 
-// USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
-//não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
-//em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
 const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 
 const Banner = () => {

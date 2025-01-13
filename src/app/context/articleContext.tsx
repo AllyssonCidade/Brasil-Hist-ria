@@ -11,6 +11,7 @@ import { fetchArticles, ArticleProps } from "@/services/api";
 interface ArticleContextType {
   articles: ArticleProps[];
   loading: boolean;
+  loadMoreArticles: (start: number, limit: number) => void;
 }
 
 const ArticleContext = createContext<ArticleContextType | undefined>(undefined);
@@ -26,7 +27,7 @@ export const ArticleProvider = ({ children }: ArticleProviderProps) => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const data = await fetchArticles();
+        const data = await fetchArticles(0, 5);
         setArticles(data);
         setLoading(false);
       } catch (error) {
@@ -38,8 +39,20 @@ export const ArticleProvider = ({ children }: ArticleProviderProps) => {
     loadArticles();
   }, []);
 
+  const loadMoreArticles = async (start: number, limit: number) => {
+    try {
+      setLoading(true);
+      const data = await fetchArticles(start, limit);
+      setArticles(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Erro ao artigos:", error);
+      setLoading(false);
+    }
+  };
+
   return (
-    <ArticleContext.Provider value={{ articles, loading }}>
+    <ArticleContext.Provider value={{ articles, loading, loadMoreArticles }}>
       {children}
     </ArticleContext.Provider>
   );

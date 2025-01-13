@@ -17,7 +17,8 @@ function Videos() {
       setVideos(data);
     };
     loadVideos();
-  }, [videos]);
+  }, []);
+
   return (
     <section className="flex flex-col gap-2  py-12 px-2 ">
       <div className="w-full h-1 bg-black" />
