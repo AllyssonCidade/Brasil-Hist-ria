@@ -25,7 +25,7 @@ interface ArticleProps {
 // USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
 //não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
 //em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
-// const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
+const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 export default function Article() {
   const { articles } = useArticleContext();
   const { id } = useParams();
@@ -109,7 +109,7 @@ export default function Article() {
       <Header />
       <div className="flex relative flex-row w-full h-32 md:h-56 lg:h-72">
         <img
-          src={article.cover.url}
+          src={HOST + article.cover.url}
           alt={article.title}
           className="w-full h-full opacity-60 relative"
         />
@@ -139,8 +139,12 @@ export default function Article() {
       </div>
       <div className="flex flex-row w-full m-auto items-center">
         <div className="w-full h-px bg-black"></div>
-        <img src="/images/olhos.png" alt="logo" className="w-12 h-12" />
-        <div className="w-full h-px bg-red-800 "></div>
+        <img
+          src="/images/olhos.png"
+          alt="icone de olhos"
+          className="w-12 h-12"
+        />
+        <div className="w-full h-px bg-black"></div>
       </div>
       <p className="text-center text-2xl md:text-2xl mt-2 mb-6 md:mt-8 md:mb-10">
         VEJA TAMBÉM
@@ -152,7 +156,7 @@ export default function Article() {
             key={article.id}
             id={article.id}
             title={article.title}
-            url={`${article?.cover?.url}`}
+            url={`${HOST}${article?.cover?.url}`}
             autor={article.autor}
           />
         ))}
