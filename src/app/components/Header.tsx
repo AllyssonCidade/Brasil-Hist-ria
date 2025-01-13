@@ -12,9 +12,14 @@ const Header = () => {
 
   return (
     <section className="flex sm400:py-2 sm400:px-6 flex-row justify-between px-10 py-4">
-      <h1 className="text-2xl sm400:text-lg w-11/12 tracking-25p lg:text-4xl sm:w-full sm:text-5xl">
-        BRASIL HISTÓRIA
-      </h1>
+      <Link
+        href="/"
+        className="text-2xl sm400:text-lg w-11/12 tracking-25p lg:text-4xl sm:w-full sm:text-5xl"
+      >
+        <h1 className="text-2xl sm400:text-lg w-11/12 tracking-25p lg:text-4xl sm:w-full sm:text-5xl">
+          BRASIL HISTÓRIA
+        </h1>
+      </Link>
       {/* Menu hambúrguer */}
       <div className="lg:hidden flex items-center">
         <button onClick={() => onPressMenu()} className="text-xl">

@@ -15,7 +15,6 @@ function Videos() {
     const loadVideos = async () => {
       const data = await fetchVideos();
       setVideos(data);
-      console.log("VIDEO.URL", videos[1].video[0].url);
     };
     loadVideos();
   }, [videos]);

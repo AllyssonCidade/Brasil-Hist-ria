@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Newsreader } from "next/font/google";
 import "./globals.css";
+import { ArticleProvider } from "./context/articleContext";
 
 const newsReader = Newsreader({
   subsets: ["latin"],
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${newsReader.className}  antialiased`}>{children}</body>
+      <body className={`${newsReader.className}  antialiased`}>
+        <ArticleProvider>{children}</ArticleProvider>
+      </body>
     </html>
   );
 }

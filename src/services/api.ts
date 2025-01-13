@@ -1,12 +1,13 @@
 const HOST = process.env.NEXT_PUBLIC_HOST_API;
 
-export interface Article {
-  id: number;
+export interface ArticleProps {
+  id: string;
   documentId: string;
   title: string;
   content: string;
   publishedAt: string;
   autor: string;
+  createdAt: string;
   cover: { url: string };
   comments?: { id: string; content: string; autor: string }[];
 }
@@ -23,13 +24,20 @@ export type BannerProps = {
   }[];
 };
 
-export const fetchArticles = async (): Promise<Article[]> => {
+export const fetchArticles = async (): Promise<ArticleProps[]> => {
   const response = await fetch(`${HOST}articles`);
   if (!response.ok) {
     throw new Error("Erro ao buscar artigos");
   }
   const data = await response.json();
-
+  return data.data;
+};
+export const fetchArticle = async (id: string): Promise<ArticleProps[]> => {
+  const response = await fetch(`${HOST}article/${id}`);
+  if (!response.ok) {
+    throw new Error("Erro ao buscar artigo");
+  }
+  const data = await response.json();
   return data.data;
 };
 

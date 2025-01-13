@@ -6,10 +6,10 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { fetchArticles, Article } from "@/services/api";
+import { fetchArticles, ArticleProps } from "@/services/api";
 
 interface ArticleContextType {
-  articles: Article[];
+  articles: ArticleProps[];
   loading: boolean;
 }
 
@@ -20,7 +20,7 @@ interface ArticleProviderProps {
 }
 
 export const ArticleProvider = ({ children }: ArticleProviderProps) => {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState<ArticleProps[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
