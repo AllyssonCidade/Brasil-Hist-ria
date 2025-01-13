@@ -7,7 +7,7 @@ import CardArticle from "./CardArticle";
 // USAR HOST EM AMBIENTE DE DESENVOLVIMENTO
 //não sei por que está fazendo isso, mas funciona(antes de subir remova a variavel host do <img> e comente esta variavel abaixo deste comentário)
 //em desenvolvimento use uma variavel HOST pegando o .env do localhost e coloque antes das imagens
-const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
+// const HOST = process.env.NEXT_PUBLIC_HOST_IMG_API;
 
 function Articles() {
   const { articles } = useArticleContext();
@@ -20,7 +20,7 @@ function Articles() {
           <CardArticle
             key={article.id}
             id={article.id}
-            url={`${HOST}${article?.cover?.url}`}
+            url={`${article?.cover?.url}`}
             title={article.title}
             autor={article.autor}
             publishedAt={article.publishedAt}
